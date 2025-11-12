@@ -1,0 +1,191 @@
+/* 애드센스 추가 === 기본(모바일) — 현재와 동일: 좌 숨김, 우 노출(비고정) ===== */
+.ad-side { position: static; top:auto; left:auto; right:auto; }
+.layout-3col { display: block; }
+#cMain { width: 100%; }
+
+#ad-left { display: none; }
+#ad-right {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 16px;
+}
+#ad-right ins.adsbygoogle { display: inline-block; }
+
+/* ===== 태블릿(768–1199.98px): 좌측만 고정 + 수직 중앙 ===== */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .layout-3col { display: block; } /* 좌가 fixed라 flex 불필요 */
+
+  #ad-left{
+    display: block;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    width: 300px;
+    z-index: 50;              /* 광고는 낮게 */
+    text-align: center;
+  }
+  #ad-right{ display: none; }
+
+
+ /* 본문이 광고와 겹치지 않게 */
+  #dkContent { padding-left: calc(300px + 32px); } /* 300 + 16*2 */
+}
+
+/* 자동 목차(TOC) */
+.toc-box {
+  border: 1px solid #ccc;
+  padding: 10px 0px 0px 15px;
+background-color: #ffffff;
+  border-radius: 10px;
+  margin: 20px 0 40px;
+}
+
+.toc-box ul {
+list-style-type: decimal;
+}
+
+.toc-header p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#toc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+#toc ul {
+margin-bottom: 0px;
+margin-top: 5px;
+}
+
+#toc p {
+font-weight: 550;
+margin-bottom: 7px;
+}
+
+#toc li {
+  margin: 8px 10px;
+  line-height: 1.6;
+}
+
+#toc a {
+  color: #2f67ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#toc * {
+font-size: 20px;
+color: rgb(72, 75, 248);
+}
+
+#toc a:hover {
+  color: #f59fd7;
+  text-decoration: underline;
+}
+
+
+/* ===== 데스크탑(>=1200px): 좌/우 고정 + 수직 중앙 ===== */
+@media (min-width: 1200px) {
+  .layout-3col { display: block; }
+
+  #ad-left, #ad-right{
+    display: block;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    z-index: 50;              /* 광고는 낮게 */
+    text-align: center;
+  }
+  #ad-left  { left: 16px; }
+  #ad-right { right: 16px; }
+
+  #dkContent{
+    padding-left:  calc(300px + 32px);
+    padding-right: calc(300px + 32px);
+  }
+}
+
+/* ===== 메뉴/카테고리/닫기 버튼을 항상 광고 위로 ===== */
+.area_menu,
+.area_navi,
+.area_navi .list_cate { z-index: 5000; }
+.dimmed_layer          { position: fixed;   z-index: 4000; }
+.btn_close             { position: fixed;   z-index: 6000; }
+
+/* 버튼 스타일 추가 */
+.btn {
+    display: inline-block;
+    background-color: #f02800; /* 기본 빨강 */
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease; /* 부드러운 효과 */
+  }
+
+  .btn:hover {
+    background-color: #d91c00; /* hover 시 색상 진하게 */
+    transform: scale(1.05); /* 크기 5% 확대 */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  }
+
+  .btn:active {
+    transform: scale(0.98); /* 클릭 시 살짝 줄어듦 */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+
+.btn:visited {
+    color: #fff; /* 방문 후에도 흰색 유지 */
+  }
+
+/* 테이블 */
+.toll-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  border: 1px solid #e9edf4;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.toll-table thead tr {
+  background: linear-gradient(90deg, #0e2a73, #2f4aa0);
+  color: #fff;
+}
+
+.toll-table th,
+.toll-table td {
+  border: 1px solid #e9edf4;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px 10px;
+  font-size: 16px;
+}
+
+.toll-table th {
+  border-color: #0b1f5e;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.toll-table tbody tr.alt-row {
+  background-color: #f6f8ff;
+}
+
+.toll-table tbody tr:hover {
+  background-color: #eef3ff;
+  transition: background-color 0.3s ease;
+}
+
